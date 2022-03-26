@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Apply Jobs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Responsive Footer Section | CodingNepal</title> -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+   background-size: cover;
+   
+}
+
+.login-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -30px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 70px;
+  letter-spacing: 4px
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+ 
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+</style>
+<body>
+ 
+  <!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}"><h4><b>SmartCity</b></h4></a>
+			</div>
+			 
+			<div id="navbar" class="collapse navbar-collapse">
+				<form align="right" name="form1" method="post" action="log_out.php">
+  			<label>
+  			 
+  				<ul class="nav navbar-nav">
+  				   <li sec:authorize="isAuthenticated()"><a th:href="@{/}"><h4>Home</h4></a></li >
+  				   <li sec:authorize="isAuthenticated()"><a th:href="@{/about}"><h4>AboutUs</h4></a></li >
+				   <li sec:authorize="isAuthenticated()"><a th:href="@{/contact}"><h4>Contact</h4></a></li >
+				   <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><h4>Logout</h4></a></li>
+				   
+				</ul>
+  			</label>
+			</form>
+			</div>
+		</div>
+	</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> 
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> 
+<div class="login-box">
+  
+  <h2>Apply for a Job</h2>
+ 	<form th:action="@{/jobb}" th:object = "${jobs}" method="POST">
+    <div class="user-box">
+      <input type="text" name="fname"  th:field = "*{fname}" required="">
+      <label>First name</label>
+    </div>
+    <div class="user-box">
+      <input type="text"  name="lname" th:field = "*{lname}"  required="">
+      <label>Last name</label>
+    </div>
+     <div class="user-box">
+      <input type="text"  name="email" th:field = "*{email}"   required="">
+      <label>Email</label>
+    </div>
+     
+<h5 style="color:white">TickMark Ur SKills </h5><br>
+<label style="color:white" class="container">Machine Learning
+  <input  type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+<label style="color:white"class="container">Cyber Security
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label style="color:white"class="container">Data Scientist
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label style="color:white" class="container">Devops Engineer
+  <input type="checkbox">
+  <span class="checkmark"></span><br>
+</label><br>
+     <div class="user-box">
+      <input type="text" name="port" th:field = "*{port}"   required="">
+      <label>Portfolio Website</label>
+    </div>
+    
+    
+     <div class="user-box">
+      <input type="text" name="salary" th:field = "*{salary}"   required="">
+      <label>Salary Requirements</label>
+    </div>
+    
+     <div class="user-box">
+      <input type="text" name="salary" th:field = "*{position}"   required="">
+      <label>Position Applying For</label>
+    </div>
+    
+    
+     <p style="color:white ;">Are you Willing to ReAllocate:</p>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label style="color:white" ;for="html">Yes</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+ <label style="color:white" ;for="css">No</label><br>
+ <input type="radio" id="javascript" name="fav_language" value="JavaScript">  <label style="color:white" ;for="javascript">Not Sure</label>
+
+ <br><br>
+
+     <div class="user-box">
+      <input type="text" name="last" th:field = "*{last}"    required="">
+      <label>Last Wrkng Company</label>
+    </div>
+    
+    <div class="user-box">
+      <input type="number" name="start" th:field = "*{start}"   required="">
+      <label>Graduation Completes at</label>
+    </div>
+    
+     <div class="user-box">
+      <input type="text" rows="4" cols="50" name="comment" th:field = "*{comment}"    required="">
+      
+      <label>Comments</label>
+    </div>
+    
+    <div class="mani">
+      <label style="color:red">Upload Resume</label>
+        <span></span>
+      <span></span>
+ 
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+    
+    <a>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    <button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+    </a>
+  </form>
+</div>
+
+      </body>
+ 
+</html>

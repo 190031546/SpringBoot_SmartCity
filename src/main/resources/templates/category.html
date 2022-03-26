@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/compiled.min.css">
+<style>
+ 
+h3{
+	color:orange;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+ 
+</style>
+
+    
+  </head>
+  <body>
+  
+  
+   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary"> <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/students}">Cities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/category}">Category</a>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ur Choice
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" th:href="@{/category}">Category</a></li>
+            <li><a class="dropdown-item" th:href="@{/students}">Cities</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" th:href="@{/apply/new}">Apply</a></li>
+          </ul>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a> 
+        </li>
+      </ul>
+      
+      <form class="d-flex">
+           <h3>Welcome <span sec:authentication="principal.username"> User </span></h3>
+      </form>
+    </div>
+    
+  </div>
+</nav>
+
+
+ <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Sectors</h1>
+        <p class="lead text-muted">Where U can simply find and explore through all the ways.Digital world that evolves from the definition of ubiquitous computing and promotes the ideas of a physical world that is richly and invisibly interwoven with sensors</p>
+        <p>
+      
+          <a th:href="@{/}" class="btn btn-primary my-2">Home</a>
+          <a th:href="@{/students}" class="btn btn-secondary my-2">Cities</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+ 
+  
+  
+     
+ <div class="album py-5 bg-light">
+    <div class="container">
+ <center>
+      <div class="row row-cols-1 row-cols-sm-1 ">
+       
+      
+     
+        <div class="col">
+          <div class="card shadow-sm">
+      
+            <div class="card-body">
+            <div class="bg-image hover-overlay hover-zoom hover-shadow ripple" style="max-width: 24rem;">
+        <img src="https://media.istockphoto.com/photos/indian-white-collar-male-worker-in-wheelchair-having-cheerful-with-picture-id1331470022?b=1&k=20&m=1331470022&s=170667a&w=0&h=Znn6HfevSGffKlV22hlAG1DLPLZlmycBXUUB8hGw6qQ=" class="w-100">
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(57, 192, 237, 0.2)"></div>
+        </a>
+          <br>
+          <br>
+         <center> <p class="card-text">The work that a person does regularly in order to earn money  a duty, task, or function that someone capable of.</p><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Jobs</button></center>
+        
+         </center>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+ 
+  
+ <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+          </section>
+          <!-- Section: Social media -->
+
+          <!-- Section: Form -->
+          <section class="">
+            <form action="">
+              <!--Grid row-->
+              <div class="row d-flex justify-content-center">
+                <!--Grid column-->
+                <div class="col-auto">
+                  <p class="pt-2">
+                    <strong>Sign up for our newsletter</strong>
+                  </p>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-5 col-12">
+                  <!-- Email input -->
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" id="form5Example24" class="form-control">
+                    <label class="form-label" for="form5Example24" style="margin-left: 0px;">Email address</label>
+                  <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-auto">
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-outline-light mb-4">
+                    Subscribe
+                  </button>
+                </div>
+                <!--Grid column-->
+              </div>
+              <!--Grid row-->
+            </form>
+          </section>
+          <!-- Section: Form -->
+
+          <!-- Section: Text -->
+          <section class="mb-4">
+            <p>
+Inceris information and communication technology (ICT) to improve operational efficiency, share information with the public and provide a better quality of government service and citizen welfare. ... People able to live and work within the city, using its resources.            </p>
+          </section>
+          <!-- Section: Text -->
+
+          <!-- Section: Links -->
+          <section class="">
+            <!--Grid row-->
+            <div class="row">
+              <!--Grid column-->
+             
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+             
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </section>
+          <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">Inceris♥</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+  
+ 
+ 
+      
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+ 
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+ 
+
+
+  </body>
+</html>

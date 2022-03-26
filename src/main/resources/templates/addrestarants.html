@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Restarents</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+		<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}"><h4><b>SmartCity</b></h4></a>
+			</div>
+			 
+			<div id="navbar" class="collapse navbar-collapse">
+				<form align="right" name="form1" method="post" action="log_out.php">
+  			<label>
+  			 
+  				<ul class="nav navbar-nav">
+  				   <li sec:authorize="isAuthenticated()"><a th:href="@{/}"><h4>Home</h4></a></li >
+  				   <li sec:authorize="isAuthenticated()"><a th:href="@{/about}"><h4>AboutUs</h4></a></li >
+				   <li sec:authorize="isAuthenticated()"><a th:href="@{/contact}"><h4>Contact</h4></a></li >
+				   <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><h4>Logout</h4></a></li>
+				   
+				</ul>
+  			</label>
+			</form>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+
+
+<br>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class="col-md-6 col-md-offset-3">
+				<h1 class = "text-center"> Add Restaurents </h1>
+				<div class = "card-body">
+					<form th:action="@{/addRestaurents}" th:object = "${Restaurents}" method="POST">
+						<div class ="form-group">
+							<label> Restaurents </label>
+							<input
+							type = "text"
+							name = "sname"
+							th:field = "*{resname}"
+							class = "form-control"
+							placeholder="Delhi Ps" 
+							required
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label>spelitem</label>
+							<input
+							type = "text"
+							name = "category"
+							th:field = "*{spelitem}"
+							class = "form-control"
+							placeholder="Secondary" 
+							required
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Location </label>
+							<input
+							type = "text"
+							name = "location"
+							th:field = "*{location}"
+							class = "form-control"
+							placeholder="Telangana" 
+							required
+							/>
+						</div>
+						
+							<div class ="form-group">
+							<label> Type(veg/non-veg) </label>
+							<input
+							type = "text"
+							name = "estab"
+							th:field = "*{type}"
+							class = "form-control"
+							placeholder="1985" 
+							required
+							/>
+						</div>
+						
+							<div class ="form-group">
+							<label> Contact </label>
+							<input
+							type = "text"
+							name = "mobile"
+							th:field = "*{mobile}"
+							class = "form-control"
+							placeholder="8186905185" 
+							required
+							/>
+						</div>
+						
+					 
+						
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

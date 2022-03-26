@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Education</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+		<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}"><h4><b>SmartCity</b></h4></a>
+			</div>
+			 
+			<div id="navbar" class="collapse navbar-collapse">
+				<form align="right" name="form1" method="post" action="log_out.php">
+  			<label>
+  			 
+  				<ul class="nav navbar-nav">
+  				   <li sec:authorize="isAuthenticated()"><a th:href="@{/}"><h4>Home</h4></a></li >
+  				   <li sec:authorize="isAuthenticated()"><a th:href="@{/about}"><h4>AboutUs</h4></a></li >
+				   <li sec:authorize="isAuthenticated()"><a th:href="@{/contact}"><h4>Contact</h4></a></li >
+				   <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><h4>Logout</h4></a></li>
+				   
+				</ul>
+  			</label>
+			</form>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+
+
+<br>
+<br>
+<br>
+	<div class="login-box">
+  <h2>Apply for a School/University</h2>
+ 	<form th:action="@{/applyedu}" th:object = "${applyedu}" method="POST">
+    <div class="user-box">
+      <input type="text" name="address" th:field = "*{address}" required="">
+      <label>Address</label>
+    </div>
+    <div class="user-box">
+      <input type="text"  name="sname" th:field = "*{sname}"  required="">
+      <label>University</label>
+    </div>
+     <div class="user-box">
+      <input type="text"  name="contact" th:field = "*{contact}"  required="">
+      <label>Contact</label>
+    </div>
+     
+     <div class="user-box">
+      <input type="text" name="grade" th:field = "*{grade}"  required="">
+      <label>Grade</label>
+    </div>
+     <div class="user-box">
+      <input type="text"  name="stream" th:field = "*{stream}"  required="">
+      <label>Stream</label>
+    </div>
+    
+    
+    
+     
+    
+    <div class="mani">
+      <label style="color:red">Upload Profile</label>
+        <span></span>
+      <span></span>
+ 
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+    
+    <a>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    <button>  Submit</button>
+    </a>
+  </form>
+</div>
+
+</body>
+
+</html>
